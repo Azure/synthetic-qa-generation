@@ -438,7 +438,7 @@ if __name__ == "__main__":
     parser.add_argument("--temperature", type=int, default=0.7)
     parser.add_argument("--top_p", type=int, default=0.95)
     parser.add_argument("--model_name", type=str, default="gpt-4o")
-    parser.add_argument("--language", type=str, default="Korean")
+    parser.add_argument("--language", type=str, default="English")
     parser.add_argument("--question_only", type=bool, default=True)
     
     args = parser.parse_args()

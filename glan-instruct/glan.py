@@ -167,6 +167,7 @@ def generate_subjects(discipline, max_number_of_subjects=2, max_number_of_subtop
     Limit the number of `subjects` to a maximum of {max_number_of_subjects}.    
     Limit the number of `subtopics` to a maximum of {max_number_of_subtopics} for each `subject`.    
     """
+
     t0 = time.time()    
     response = client.chat.completions.create(
         model=model_name,

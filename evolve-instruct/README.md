@@ -16,23 +16,28 @@ We added the following features to the original implementation:
 - Prevented infinite loop. `mutate()` in the original implementation determines the validity of the augmented statement and repeats the loop until it is valid. However, this process takes a very long time and there is a problem in that the loop repeats infinitely in certain situations.
 
 ## How to create dataset
+
+### Option 1. If you want to generate your own seed dataset through this lab (Please check `../seed`)
+Example datasets are placed in this [folder](../seed/samples). Please try the minimal example first and configure your dataset by referring to the tunable parameters.
+
+Debug for test
+```shell
+chmod +x run_debug.sh
+./run_debug.sh
+```
+
+### Option 2. If you already have your own dataset
 Example datasets are placed in this [folder](samples). Please try the minimal example first and configure your dataset by referring to the tunable parameters.
 
-### Example
 Debug for test
-```
+```shell
 python evolve.py --seed_file xxx.jsonl --column_names Instruction --num_rows 50 --max_len_chars 512 --language English
-```
-
-Debug for test (Korean); Because the implementation utilizes GPT-4o, multiple languages ​​can be easily applied.
-```
-python evolve.py --seed_file xxx.jsonl --column_names Instruction --num_rows 50 --max_len_chars 512 --language Korean
 ```
 
 ### Tunable parameters
 ```python
 parser.add_argument("--seed_file", type=str)
-parser.add_argument("--column_names", nargs='+', default="instruction")
+parser.add_argument("--column_names", nargs='+', default="Instruction")
 parser.add_argument("--num_rows", type=int, default=5)
 parser.add_argument("--min_len_chars", type=int, default=32)
 parser.add_argument("--max_len_chars", type=int, default=512)
