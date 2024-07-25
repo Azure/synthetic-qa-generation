@@ -24,6 +24,8 @@ from openai import AzureOpenAI, RateLimitError
 
 import logging
 logger = logging.getLogger('GLAN_logger')
+MAX_RETRIES = 3
+DELAY_INCREMENT = 30
 
 load_dotenv()  # take environment variables from .env.
 
@@ -312,7 +314,25 @@ def generate_questions(
         with tqdm(total=len(batch_inputs), desc="\t\tProcessing Questions") as pbar:
             for i in range(0, len(batch_inputs), batch_size):
                 minibatch = batch_inputs[i:i+batch_size]
-                questions_ = chain.batch(minibatch, {"max_concurrency": batch_size})
+
+                retries = 0
+                while retries <= MAX_RETRIES:
+                    try:
+                        questions_ = chain.batch(minibatch, {"max_concurrency": batch_size})
+                        break  # Exit the retry loop once successful
+                    except RateLimitError as rate_limit_error:
+                        delay = (retries + 1) * DELAY_INCREMENT
+                        logger.warning(f"{rate_limit_error}. Retrying in {delay} seconds...")
+                        time.sleep(delay)
+                        retries += 1
+
+                        if retries > MAX_RETRIES:
+                            logger.error(f"Max retries reached this batch. Skipping to next batch.")
+                            break
+                    except Exception as e:
+                        logger.error(f"Error in process_inputs: {e}")
+                        break  
+                
                 for q in questions_:
                     q.update(metadata)
                 questions.extend(questions_)
@@ -349,7 +369,7 @@ def generate_answers(all_questions, model_name="gpt-4o", max_tokens=1024, batch_
 
     Respond "DO NOT KNOW" if not sure about the answer.
     """
-    system_prompt += f"Answer must be less than {max_tokens} tokens."
+    system_prompt += f"Answer must be less than {max_tokens} token length."
 
     system_message_template = SystemMessagePromptTemplate.from_template(system_prompt)
     human_prompt = [
@@ -371,10 +391,29 @@ def generate_answers(all_questions, model_name="gpt-4o", max_tokens=1024, batch_
     logger.info(f"===== Generating Answers")
     t0 = time.time()
     all_answers = []
+    
     with tqdm(total=len(all_questions), desc="Processing Answers") as pbar:
         for i in range(0, len(all_questions), batch_size):
             minibatch = all_questions[i:i+batch_size]
-            answers = chain.batch(minibatch, {"max_concurrency": batch_size})
+   
+            retries = 0
+            while retries <= MAX_RETRIES:
+                try:
+                    answers = chain.batch(minibatch, {"max_concurrency": batch_size})
+                    break  # Exit the retry loop once successful
+                except RateLimitError as rate_limit_error:
+                    delay = (retries + 1) * DELAY_INCREMENT
+                    logger.warning(f"{rate_limit_error}. Retrying in {delay} seconds...")
+                    time.sleep(delay)
+                    retries += 1
+
+                    if retries > MAX_RETRIES:
+                        logger.error(f"Max retries reached this batch. Skipping to next batch.")
+                        break
+                except Exception as e:
+                    logger.error(f"Error in process_inputs: {e}")
+                    break            
+            
             all_answers.extend(answers)
             pbar.set_postfix({"current_batch": f"{i//batch_size + 1}/{(len(all_questions) + (batch_size-1))//batch_size}"})
             pbar.update(len(minibatch))
