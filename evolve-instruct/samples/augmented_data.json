@@ -1,0 +1,32 @@
+[
+  {
+    "input": "Could you determine the specific learning rate value (LR) recorded at the 7000th iteration within the hvd_train_log?"
+  },
+  {
+    "input": "Can you provide the accuracy and precision metrics recorded at epoch 37 in the model training logs?"
+  },
+  {
+    "input": "Could you elaborate on the process and specific steps needed to resize the TFRecord training dataset for ImageNet utilizing the provided scripts, including any potential challenges and solutions?"
+  },
+  {
+    "input": "Could you outline the sequential procedures to be followed post-data transformation to ensure both the reliability of data backup and its continuous availability, requiring detailed verification and contingency planning?"
+  },
+  {
+    "input": "Could you explain the primary function and broader implications of using the 'nohup' command, especially in the context of manually downloading the extensive ImageNet dataset, along with potential advantages and disadvantages?"
+  },
+  {
+    "input": "What is the purpose of using the 'nohup' command when manually downloading the ImageNet dataset?"
+  },
+  {
+    "input": "Can you explain the rationale behind not performing the resizing to 224x224 for the RecordIO format, and discuss any potential consequences and alternatives?"
+  },
+  {
+    "input": "What are the underlying reasons that make a supplementary EBS volume of 1.0TB advisable for efficiently handling the ImageNet dataset? Please elaborate on the factors involved."
+  },
+  {
+    "input": "Taking into account both cost-efficiency and performance, what is the recommended EC2 instance type for storing the ImageNet dataset and why?"
+  },
+  {
+    "input": "What is the purpose of the script 'preprocess_imagenet.py' and how is it executed?"
+  }
+]

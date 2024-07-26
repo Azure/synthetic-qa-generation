@@ -1,0 +1,24 @@
+{"idx": 1, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What version of TensorFlow was used in the evaluation?"}
+{"idx": 2, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the first step to prepare the validation set for ImageNet training?"}
+{"idx": 3, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the purpose of the script 'preprocess_imagenet.py' and how is it executed?"}
+{"idx": 4, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "How can you resize the TFRecord training dataset for ImageNet using the provided scripts?"}
+{"idx": 5, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What steps should be taken after data transformation to ensure data backup and availability?"}
+{"idx": 6, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the naming convention for the instances shown in the AWS management console?"}
+{"idx": 7, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What command was executed in the terminal to list the files in the directory?"}
+{"idx": 8, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What should be done after data transformation before training the ResNet-50 model?"}
+{"idx": 9, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What command was executed to display the list of files and directories?"}
+{"idx": 10, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the recommended instance type for distributed GPU training using Uber's Horovod or TensorFlow's DistributedStrategy?"}
+{"idx": 11, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the total size of the ImageNet training and validation sets combined?"}
+{"idx": 12, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What environment variables need to be set before running TensorFlow's download script for ImageNet?"}
+{"idx": 13, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the purpose of the 'nohup' command in the context of downloading the ImageNet dataset manually?"}
+{"idx": 14, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What steps are involved in extracting the validation set after downloading the ImageNet dataset manually?"}
+{"idx": 15, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the learning rate (LR) at step 7000 in the hvd_train_log?"}
+{"idx": 16, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "How many GPUs were used for the training mentioned in the eval_hvd_train.log?"}
+{"idx": 17, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What was the speed at step 50 in the hvd_train_log?"}
+{"idx": 18, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the recommended EC2 instance type for storing the ImageNet dataset and why?"}
+{"idx": 19, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "Why is an additional EBS volume of 1.0TB recommended for the ImageNet dataset?"}
+{"idx": 20, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "Why was the resizing to 224x224 not performed for the RecordIO format?"}
+{"idx": 21, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What command was executed in the Linux terminal to display the directory and file listings?"}
+{"idx": 22, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What instance type and availability zone are used for the distributed training mentioned in the context?"}
+{"idx": 23, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "What is the final loss and learning rate at step 14050 during the training process?"}
+{"idx": 24, "Skill": "Distributed training on Cloud", "Difficulty": 5, "Instruction": "Where can the training and evaluation logs be found after the training process?"}
