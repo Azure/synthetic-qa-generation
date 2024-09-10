@@ -281,7 +281,7 @@ def image_complexity(img, laplacian_var_thres=500, edge_count_thres=10000, total
     edges = cv2.Canny(gray_img, 100, 200)
     edge_count = np.sum(edges > 0)
 
-    if laplacian_var_thres > laplacian_var_thres or edge_count > edge_count_thres or total_entropy > total_entropy_thres:
+    if laplacian_var > laplacian_var_thres or edge_count > edge_count_thres or total_entropy > total_entropy_thres:
         return "Complex", laplacian_var, edge_count, total_entropy
     else:
         return "Simple", laplacian_var, edge_count, total_entropy
