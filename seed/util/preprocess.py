@@ -188,23 +188,32 @@ def update_figure_description(md_content, img_description, idx):
 
     Returns:
         str: The updated Markdown content with the new figure description.
-    """
-
-    # The substring you're looking for
+    """    
+    # The substring you're looking for    
     start_substring = f"![](figures/{idx})"
     end_substring = "</figure>"
     new_string = f"<!-- FigureContent=\"{img_description}\" -->"
-    
+
+    grouped_content_start_substring = "<figure>"
     new_md_content = md_content
     # Find the start and end indices of the part to replace
     start_index = md_content.find(start_substring)
+    
     if start_index != -1:  # if start_substring is found
         start_index += len(start_substring)  # move the index to the end of start_substring
         end_index = md_content.find(end_substring, start_index)
         if end_index != -1:  # if end_substring is found
             # Replace the old string with the new string
             new_md_content = md_content[:start_index] + new_string + md_content[end_index:]
-    
+
+    group_content_index = md_content.find(grouped_content_start_substring)
+    if group_content_index != -1:  # if start_substring is found
+        start_index += len(grouped_content_start_substring)  # move the index to the end of start_substring
+        end_index = md_content.find(end_substring, start_index)
+        if end_index != -1:  # if end_substring is found
+            # Replace the old string with the new string
+            new_md_content = md_content[:end_index] + "Image description :\n" + img_description + md_content[end_index:]
+
     return new_md_content
 
 
