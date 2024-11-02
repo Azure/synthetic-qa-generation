@@ -1,7 +1,7 @@
 pdf2image==1.17.0
 langchain==0.2.10
 langchain-openai==0.1.17
-langchain-community==0.2.9
+langchain-community==0.3.0
 python-dotenv==1.0.1
 openai==1.35.15
 transformers~=4.42
