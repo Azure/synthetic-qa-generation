@@ -21,6 +21,4 @@ markdownify==0.13.1
 pymupdf==1.24.12
 Jinja2
 jsonlines
-promptflow[azure]
-promptflow-tools
 azure-ai-contentsafety==1.0.0
