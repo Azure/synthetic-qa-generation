@@ -3,42 +3,37 @@ Quantum Mechanics
 Thermodynamics
 Electromagnetism
 Optics
-Acoustics
+Nuclear Physics
 Organic Chemistry
 Inorganic Chemistry
 Physical Chemistry
 Analytical Chemistry
 Biochemistry
-Molecular Biology
-Genetics
-Ecology
-Microbiology
 Botany
 Zoology
+Genetics
+Microbiology
+Ecology
+Molecular Biology
 Geology
 Meteorology
 Oceanography
-Paleontology
 Environmental Science
-Astrophysics
-Cosmology
-Planetary Science
-Stellar Astronomy
-Galactic Astronomy
+Paleontology
 Algebra
 Calculus
 Statistics
 Geometry
 Number Theory
-Topology
+Applied Mathematics
+Astrophysics
+Cosmology
+Planetary Science
+Stellar Astronomy
+Galactic Astronomy
 Artificial Intelligence
 Machine Learning
-Cybersecurity
 Software Engineering
+Cybersecurity
 Data Science
 Human-Computer Interaction
-Conservation Biology
-Environmental Chemistry
-Climate Science
-Environmental Policy
-Sustainability Science

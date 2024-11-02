@@ -3,7 +3,7 @@
 INPUT_FILE="../seed/samples/imagenet-training-summary-oai.jsonl"
 SEED_FILE="seed.jsonl"
 COLUMN_NAMES="Instruction"
-NUM_ROWS=10
+NUM_ROWS=500
 MAX_LEN_CHARS=256
 
 python convert.py --input_file "$INPUT_FILE" --output_file "$SEED_FILE"

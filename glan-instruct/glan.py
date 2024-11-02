@@ -274,11 +274,12 @@ def generate_questions(
     from langchain_openai import AzureChatOpenAI
     from langchain_core.prompts import PromptTemplate
     from langchain_core.output_parsers import StrOutputParser, BaseOutputParser
-    from langchain_core.pydantic_v1 import BaseModel, Field
+    #from langchain_core.pydantic_v1 import BaseModel, Field
+    from pydantic import BaseModel, Field    
 
     llm = AzureChatOpenAI(
         max_tokens=max_tokens,
-        openai_api_version="2024-05-01-preview",
+        openai_api_version="2024-09-01-preview",
         azure_deployment=model_name,
         **kwargs                    
     )
@@ -358,7 +359,7 @@ def generate_answers(all_questions, model_name="gpt-4o", max_tokens=1024, batch_
     llm = AzureChatOpenAI(
         temperature=0, 
         max_tokens=max_tokens,
-        openai_api_version="2024-05-01-preview",
+        openai_api_version="2024-09-01-preview",
         azure_deployment=model_name,                   
     )
 
@@ -461,7 +462,7 @@ def glan_instruction_generation(args):
     UUID = str(uuid.uuid4())[:4]
 
     set_logger(args.logfile_name)
-    
+
     logger.info(f"GENERATE_DISCIPLINES = {GENERATE_DISCIPLINES}")
     logger.info(f"GENERATE_QUESTION_ONLY = {GENERATE_QUESTION_ONLY}")    
     logger.info(f"DISCIPLINES_FILEPATH = {DISCIPLINES_FILEPATH}")

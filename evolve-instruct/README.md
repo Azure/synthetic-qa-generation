@@ -1,3 +1,11 @@
+---
+layout: default
+title: Evolve-Instruct
+permalink: /1_2_evolve-instruct/
+parent: Lab 1. Generate Synthetic QnAs from Real-world Data
+nav_order: 4.2
+---
+
 # Evolve-Instruct
 
 ## Overview
@@ -47,3 +55,6 @@ parser.add_argument("--model_name", type=str, default="gpt-4o")
 parser.add_argument("--language", type=str, default="English")
 parser.add_argument("--question_only", type=bool, default=True)
 ```
+
+Run example:
+![evolve-instruct-run-example](../imgs/evolve-instruct-run-example.png)

@@ -361,6 +361,7 @@ class AzureGPTPipeline:
 
         gen_count = 0
         for d in dataset:
+            print(f"Generating {gen_count+1} of {len(dataset)}")
             response = None
             retries = 0
             while not response and retries < MAX_RETRIES:
@@ -439,7 +440,7 @@ if __name__ == "__main__":
     parser.add_argument("--top_p", type=int, default=0.95)
     parser.add_argument("--model_name", type=str, default="gpt-4o")
     parser.add_argument("--language", type=str, default="English")
-    parser.add_argument("--question_only", type=bool, default=True)
+    parser.add_argument("--question_only", type=bool, default=False)
     
     args = parser.parse_args()
 
