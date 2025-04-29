@@ -17,7 +17,7 @@ scikit-learn==1.5.2
 datasets~=3.1.0
 opencv-python-headless==4.10.0.84
 Markdown==3.7
-markdownify==0.13.1
+markdownify==0.14.1
 pymupdf==1.24.12
 Jinja2
 jsonlines
